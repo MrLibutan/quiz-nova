@@ -32,6 +32,21 @@ const categories = [
 
 const difficulties = ["Any Difficulty", "Easy", "Medium", "Hard"];
 
+function decodeQuestionData(data) {
+  const decode = (str) => {
+    const txt = document.createElement("textarea");
+    txt.innerHTML = str;
+    return txt.value;
+  };
+
+  return data.map((q) => ({
+    ...q,
+    question: decode(q.question),
+    correct_answer: decode(q.correct_answer),
+    incorrect_answers: q.incorrect_answers.map(decode),
+  }));
+}
+
 export default function QuizSetup({
   onSetView,
   onSetQuestions,
@@ -74,8 +89,7 @@ export default function QuizSetup({
           "Failed to fetch trivia questions. Please try a different category or difficulty."
         );
       // set questions
-      onSetQuestions(questions.results);
-      console.log(questions);
+      onSetQuestions(decodeQuestionData(questions.results));
     } catch (err) {
       console.error(err.message);
       onSetError(err.message);
