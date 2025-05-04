@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to right, #3a0ca3, #7209b7);
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  height: 100vh;
+}
+
+.app {
+  background: rgba(255, 255, 255, 0.1);
+  min-width: 550px;
+  max-width: 550px;
+  height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.app-header h1 {
+  font-size: 38px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.quiz-setup,
+.quiz-question,
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quiz-setup h3 {
+  text-align: center;
+}
+
+.quiz-setup button {
+  margin: 30px 60px 10px 60px;
+}
+
+.input-section {
+  gap: 4px;
+}
+
+.input-section select {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.question-header {
+  color: #d3d3d3;
+  margin: 0 0 10px 0;
+}
+
+.question-number {
+  font-size: 20px;
+  text-align: center;
+}
+
+.score {
+  text-align: center;
+}
+
+.question {
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.choice {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+.choice:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.choice.selected {
+  background-color: #4cc9f0;
+  color: #000;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  border: none;
+}
+
+.quiz-question button {
+  margin: 15px 100px 10px 100px;
+}
+
+.btn {
+  background-color: #f72585;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #b5179e;
+}
+
+.hidden {
+  display: none;
+}
+
+.loader,
+.error {
+  text-align: center;
+  margin-top: 180px;
+}
